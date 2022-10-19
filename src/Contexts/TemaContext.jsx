@@ -1,11 +1,11 @@
 import React from "react";
 import { createContext, useState } from "react";
 
+
+
 export const TemaContext = createContext();
 
 export function TemaProvider({ children }) {
-
-    const [tema, setTema] = useState(temaPadrao);
 
     const temaPadrao = {
         corFundoTema: "#212529",
@@ -13,8 +13,9 @@ export function TemaProvider({ children }) {
         corTexto: "#fff"
     }
 
+    const [tema, setTema] = useState(temaPadrao);
 
-    const modificarTema = temaSelecionado => {
+    function modificarTema(temaSelecionado) {
 
         switch (temaSelecionado) {
 
@@ -34,9 +35,9 @@ export function TemaProvider({ children }) {
     };
 
     return (
-        <TemaProvider.Provider value={{ modificarTema, tema }}>
+        <TemaContext.Provider value={{tema, modificarTema }}>
             {children}
-        </TemaProvider.Provider>
+        </TemaContext.Provider>
     )
 }
 

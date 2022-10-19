@@ -1,13 +1,19 @@
-import { HeaderComponent } from "./components/Header"
+import { BrowserRouter } from "react-router-dom"
+import { TemaProvider } from "./Contexts/TemaContext"
+import { Router } from "./Router"
 
 
 
 function App() {
 
   return (
-    <div>
-      <HeaderComponent/>
-    </div>
+    <main>
+      <TemaProvider>
+        <BrowserRouter>
+          <Router />
+        </BrowserRouter>
+      </TemaProvider>
+    </main>
   )
 }
 

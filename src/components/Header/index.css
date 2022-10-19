@@ -1,0 +1,58 @@
+header {
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0.5rem;
+    gap: 1rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.div-logo-header{
+    flex: 1;
+}
+
+.logo{
+    height: 2rem;
+    width: 2rem;
+}
+
+.div-login-header{
+    height: 2rem;
+    width: 2rem;
+    cursor: pointer;
+}
+
+.radio-tema {
+    display: none;
+}
+
+.label-tema {
+    padding: 8px 14px;
+    color: #fff;
+    cursor:pointer;
+    width: -webkit-fill-available;
+    transition: background 0.5s;
+}
+
+#radio-tema-claro {
+    color: #000;
+}
+
+#radio-tema-escuro {
+    color: #000;
+}
+
+
+
+
+.radio-tema:checked + #radio-tema-claro {
+    color: #e85d04;
+}
+
+.radio-tema:checked + #radio-tema-escuro {
+    color: #9d4edd;
+}
+
