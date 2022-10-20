@@ -1,8 +1,10 @@
-import axios from "axios";
+import http from "../config/axios";
 
 
-export const getObjectsService = () => axios.get("public/collection/v1/objects");
+export const getObjectsService = () => http.get("/objects");
 
-export const getAllDepartmentService =() => axios.get("public/collection/v1/departments");
+export const getAllDepartmentService =() => http.get("/departments");
 
-export const getSearchService = (req) => axios.get(`public/collection/v1/search?q=${req}`);
+export const getSearchService = (req) => http.get(`/search?q=${req}`);
+
+export const getObjectByIdService = (id) => http.get(`objects/${id}`)

@@ -1,0 +1,10 @@
+#main-content {
+    display: grid;
+    grid-template-rows: 20% 80%;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}

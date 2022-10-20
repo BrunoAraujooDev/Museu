@@ -1,5 +1,6 @@
 import { Route, Routes } from "react-router-dom";
-import { HeaderComponent } from "./components/Header";
+import { Department } from "./components/Departments";
+import { Home } from "./view/Home";
 
 
 export function Router(){
@@ -7,8 +8,7 @@ export function Router(){
 
     return (
         <Routes>
-            <Route path="/" element={<HeaderComponent/>}>
-            </Route>
+            <Route path="/" element={<Home/>}/>   
         </Routes>
     )
 }

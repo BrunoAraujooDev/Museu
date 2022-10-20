@@ -23,7 +23,7 @@ export function HeaderComponent(){
                 </label>
             </div>
             <div>
-                <input type="radio" className="radio-tema" id="temaEscuro" name="meuTema"/>
+                <input type="radio" className="radio-tema" id="temaEscuro" name="meuTema" defaultChecked/>
                 <label htmlFor="temaEscuro" onClick={() => modificarTema("escuro")} className="label-tema" id="radio-tema-escuro">
                     <Moon size={24} weight="fill"  />
                 </label>

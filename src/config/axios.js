@@ -1,8 +1,10 @@
 import axios from "axios";
 
 
-const axios = axios.create({
-    baseUrl: 'https://collectionapi.metmuseum.org/'
+const http = axios.create({
+    baseURL: 'https://collectionapi.metmuseum.org/public/collection/v1'
 })
 
-export default axios;
+
+
+export default http;

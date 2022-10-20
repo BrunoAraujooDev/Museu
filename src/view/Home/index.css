@@ -1,0 +1,10 @@
+
+#HomeContainer {
+
+    width: 100vw;
+    display: grid;
+    grid-template-rows: auto 20%;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
