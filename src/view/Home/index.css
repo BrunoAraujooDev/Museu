@@ -2,9 +2,48 @@
 #HomeContainer {
 
     width: 100vw;
-    display: grid;
-    grid-template-rows: auto 20%;
+    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
 }
+
+.home-div-welcome{
+    background-color: rgba(0, 0, 0, 0.63);
+    width: 101%;
+    height: 30rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 17.5%;
+    z-index: 1;
+}
+
+.home-paragr-welcome{
+    color: #fff;
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-decoration: underline;
+    font-family: 'Libre Baskerville', serif;
+}
+
+.carousel-container{
+    width: 100%;
+    margin-top: 5rem;
+
+}
+
+
+.img-carousel{
+    height: 30rem !important;
+}
+
+
+
+
+
+
+
+
