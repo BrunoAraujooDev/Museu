@@ -10,7 +10,8 @@ export function TemaProvider({ children }) {
     const temaPadrao = {
         corFundoTema: "#212529",
         corTema: "#adb5bd",
-        corTexto: "#fff"
+        corTexto: "#fff",
+        corBotao: "#33415c"
     }
 
     const [tema, setTema] = useState(temaPadrao);
@@ -27,7 +28,8 @@ export function TemaProvider({ children }) {
                 setTema({
                     corFundoTema: "#f8f9fa",
                     corTema: "#ced4da",
-                    corTexto: "#000"
+                    corTexto: "#000",
+                    corBotao: "#fff"
                 });
                 break;
 

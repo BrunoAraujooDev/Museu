@@ -1,5 +1,6 @@
 import { Moon, SignIn, SunDim } from 'phosphor-react';
 import { useContext } from 'react';
+import { Link } from 'react-router-dom';
 import logo from '../../assets/museumLogo.png';
 import { TemaContext } from '../../Contexts/TemaContext';
 import './index.css';
@@ -11,10 +12,14 @@ export function HeaderComponent(){
     return (
         <header style={ { backgroundColor: tema.corFundoTema} }>
             <div className='div-logo-header'>
-                <img src={logo} alt="" className='logo'/>   
+                <Link to="/">
+                    <img src={logo} alt="" className='logo'/>    
+                </Link>
             </div>
             <div className='div-login-header'>
-                <SignIn size={24} weight="fill"  style={ { color: tema.corTexto} }/>
+                <Link to="/login">
+                    <SignIn size={24} weight="fill"  style={ { color: tema.corTexto} }/>
+                </Link>
             </div>
             <div>
                 <input type="radio" className="radio-tema" id="temaClaro" name="meuTema"/>
