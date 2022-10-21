@@ -1,4 +1,5 @@
 import { useContext, useEffect, useState } from "react"
+import { Link } from "react-router-dom";
 import { TemaContext } from "../../Contexts/TemaContext";
 import { DepartmentImages } from "../../utils/departmentImages";
 import { getAllDepartment } from "../../utils/handleHttpRequest"
@@ -30,11 +31,13 @@ export const Department = () => {
                         if (index >= page.min && index < page.max ) {
                             return (
                                 <div key={department.departmentId} className="dept-div-item">
-                                    <figure className="dept-figure-departamento">
-                                        <img src={DepartmentImages[department.displayName]}
-                                            alt={department.displayName} className="dept-img-imagem" />
-                                        <figcaption className="dept-figcaption-titulo" style={{ color: tema.corTexto }}>{department.displayName}</figcaption>
-                                    </figure>
+                                    <Link to={`/department/${department.departmentId}`}>
+                                        <figure className="dept-figure-departamento">
+                                            <img src={DepartmentImages[department.displayName]}
+                                                alt={department.displayName} className="dept-img-imagem" />
+                                            <figcaption className="dept-figcaption-titulo" style={{ color: tema.corTexto }}>{department.displayName}</figcaption>
+                                        </figure>
+                                    </Link>
                                 </div>
                             )
                         }}

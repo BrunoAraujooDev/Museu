@@ -1,4 +1,4 @@
-import { getAllDepartmentService, getObjectsService, getSearchService } from "../services/arts.service"
+import { getAllDepartmentService, getObjectByIdDepartmentService, getObjectByIdService, getObjectsService, getSearchService } from "../services/arts.service"
 
 export const getObjects = async () => {
 
@@ -30,6 +30,30 @@ export const getSearch = async (search) => {
         const response = await getSearchService(search)
 
         return response;
+    } catch (error) {
+        
+        console.error(error)
+    }
+}
+
+export const getObjectByIdDepartment = async (id) => {
+
+    try {
+        const response = await getObjectByIdDepartmentService(id)
+
+        return response.data;
+    } catch (error) {
+        
+        console.error(error)
+    }
+}
+
+export const getObjectById = async (id) => {
+
+    try {
+        const response = await getObjectByIdService(id)
+
+        return response.data;
     } catch (error) {
         
         console.error(error)
