@@ -12,6 +12,7 @@ export function CollectionArtComponent() {
 
     const [artListsId, setArtListsId] = useState([]);
     const [artLists, setArtLists] = useState([]);
+    const [auxArtLists, setAuxArtLists] = useState([]);
     const [maxCount, setMaxCount] = useState(20);
     const [minCount, setMinCount] = useState(0);
 
@@ -22,13 +23,39 @@ export function CollectionArtComponent() {
 
 
         setArtLists((item) => [...item, list])
+        setAuxArtLists(list)
     }
 
     const ListCollection = async () => {
         const listId = await getObjectByIdDepartmentService(id)
         setArtListsId(listId)
-        console.log('artListsId', artListsId?.data?.objectIDs)
+        // console.log('artListsId', artListsId?.data?.objectIDs)
     };
+
+    function handleSearch(e){
+
+        const search = e.target.value;
+        console.log('search', search)
+
+        let words = search.split(" ");
+        console.log('auxArtLists',  auxArtLists)
+
+        const listFilter = auxArtLists.filter(obj => {
+
+            let validWord = words.some( word => obj.title.toLowerCase().includes(word.toLowerCase()) ||
+                obj.medium.toLowerCase().includes(word.toLowerCase()) ||
+                obj.artistDisplayName.toLowerCase().includes(word.toLowerCase()) 
+            )
+
+            return validWord;
+        })
+
+        if(listFilter.length > 0){
+            console.log('a', listFilter)
+        }
+
+
+    }
 
 
     useEffect(() => {
@@ -41,14 +68,14 @@ export function CollectionArtComponent() {
                     }
                 })
             }
-            
+
         })
     }, [minCount])
-    
+
     useEffect(() => {
-        
+
         const scrollObserver = new IntersectionObserver((entry) => {
-            if(entry.some(entries => entries.isIntersecting)){
+            if (entry.some(entries => entries.isIntersecting)) {
                 setMinCount(state => state + 20)
                 setMaxCount(state => state + 20)
                 console.log("min", minCount);
@@ -65,9 +92,16 @@ export function CollectionArtComponent() {
     return (
         <article id="collection-article-container">
 
+            <section className="dept-input-section">
+                <input type="text" placeholder="Search a department" className="dept-input-search" 
+                    style={{ color: tema.corTexto, backgroundColor: tema.corFundoTema }} 
+                    onChange={(e) => handleSearch(e)}
+                />
+            </section>
 
-            {artLists.length > 0 &&
-                artLists.map((art, idx) => {
+
+            {auxArtLists.length > 0 &&
+                auxArtLists.map((art, idx) => {
 
                     if (art.primaryImage !== "") {
                         return (
