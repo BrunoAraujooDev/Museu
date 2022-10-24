@@ -1,11 +1,11 @@
 import { useContext, useEffect, useState } from "react";
-import { json, Link, useParams } from "react-router-dom"
+import {  Link, useParams } from "react-router-dom"
 import { TemaContext } from "../../Contexts/TemaContext";
 import { getObjectByIdDepartmentService } from "../../services/arts.service";
 import { getObjectById } from "../../utils/handleHttpRequest";
 import "./index.css";
 import noImage from "../../assets/noImage.png";
-import { FooterComponent } from "../../components/Footer";
+
 
 export function CollectionArtComponent() {
 
@@ -109,8 +109,6 @@ export function CollectionArtComponent() {
                         onChange={(e) => handleSearch(e)}
                     />
                 </section>
-
-
                 {auxArtLists.length > 0 &&
                     auxArtLists.map((art, idx) => {
 
@@ -135,11 +133,8 @@ export function CollectionArtComponent() {
                                         </Link>
                                     </button>
                                 </div>
-
-
                             </div>
                         )
-
                     })
                 }
                 {showLoading &&
@@ -147,7 +142,6 @@ export function CollectionArtComponent() {
                         <span className="visually-hidden">Loading...</span>
                     </div>
                 }
-
             </article>
     )
 }

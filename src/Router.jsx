@@ -7,7 +7,6 @@ import { LoginComponent } from "./view/Login";
 
 export function Router(){
 
-
     return (
         <Routes>
             <Route path="/" element={<Home/>}/>   
