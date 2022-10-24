@@ -14,14 +14,12 @@ export function ArtDetails() {
     const { tema } = useContext(TemaContext);
 
     const [details, setDetails] = useState([]);
-
+    
     const handleDetails = async () => {
-
+        
         let response = await getObjectById(id)
-        console.log('response', response)
-
+        
         setDetails([response])
-
     }
 
 
@@ -31,9 +29,7 @@ export function ArtDetails() {
         }
     }, [])
 
-
     return (
-        <>
             <article id="art-article-container">
                 {
                     details.length > 0 &&
@@ -45,10 +41,10 @@ export function ArtDetails() {
                                 backgroundColor: tema.corFundoTema, color: tema.corTexto
                             }}>
                                 <section>
-                                    <h1>{item.title}</h1>
+                                    <h1 className="art-h1-title">{item.title.length < 100 ? item.title : (item.title.slice(0, 99) + "...")}</h1>
                                     <p>{item.objectBeginDate} - {item.objectEndDate}</p>
                                     <p><span className="art-span-specs">Artist: </span>
-                                        <a target="_blank" href={item.artistWikidata_URL} style={{ color: tema.corTexto }} className="art-a-artist">
+                                        <a target={item.artistWikidata_URL !== "" ? "_blank" : "_self"} href={item.artistWikidata_URL !== "" ? item.artistWikidata_URL : "#"} style={{ color: tema.corTexto }} className="art-a-artist" rel="external">
                                             {item.artistDisplayName !== "" ? item.artistDisplayName : "Unknown"}
                                         </a>
                                     </p>
@@ -62,14 +58,12 @@ export function ArtDetails() {
                                     </p>
                                 </section>
                                 <section className="art-section-img">
-                                    <img src={item.primaryImage !== "" ? item.primaryImageSmall : noImage} alt="Image representing the art" />
+                                    <img src={item.primaryImage !== "" ? item.primaryImageSmall : noImage} alt="Image representing the art" className="art-img-primary" />
                                 </section>
                             </div>
                         )
                     })
                 }
             </article>
-            <FooterComponent />
-        </>
     )
 }

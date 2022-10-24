@@ -30,7 +30,7 @@
     font-family: 'Libre Baskerville', serif;
 }
 
-.carousel-container{
+.home-figure-container{
     width: 100%;
     margin-top: 5rem;
 
@@ -38,7 +38,8 @@
 
 
 .img-carousel{
-    height: 30rem !important;
+    height: 30rem;
+    width: 100%;
 }
 
 @media screen and (max-width: 1900px) {

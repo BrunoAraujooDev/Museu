@@ -44,8 +44,6 @@ header {
 }
 
 
-
-
 .radio-tema:checked + #radio-tema-claro {
     color: #e85d04;
 }

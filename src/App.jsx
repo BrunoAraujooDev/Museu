@@ -4,6 +4,7 @@ import { HeaderComponent } from "./components/Header"
 import { TemaContext, TemaProvider } from "./Contexts/TemaContext"
 import { Router } from "./Router"
 import "./index.css";
+import { FooterComponent } from "./components/Footer";
 
 
 
@@ -15,6 +16,7 @@ function App() {
         <BrowserRouter>
         <HeaderComponent/>
           <Router />
+          <FooterComponent/>
         </BrowserRouter>
       </TemaProvider>
     </main>
