@@ -11,6 +11,11 @@
     padding: 5rem;
 }
 
+#collection-article-container >  h1{
+    margin-bottom: 3rem;
+}
+
+
 .collection-div-card{
     display: flex;
     /* flex-direction: column; */
@@ -49,7 +54,7 @@
 .collection-title-art {
     line-height: 1.3;
     font-weight: bold;
-    height: 3rem;
+    height: 6rem;
 }
 
 .collection-button-card{
@@ -72,11 +77,16 @@
     .collection-div-card{
         flex-direction: column;
         padding: 0;
+        height: 500px;
     }
 
     .collection-figure-card{
         width: 100%;
         height: 50%;
+    }
+
+    .collection-title-art {
+        height: 5rem;
     }
 
     .collection-div-specs{
@@ -97,7 +107,7 @@
 
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 630px) {
 
     #collection-article-container{
         padding: 1rem;
