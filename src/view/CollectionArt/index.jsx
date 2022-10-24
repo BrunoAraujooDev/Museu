@@ -21,24 +21,29 @@ export function CollectionArtComponent() {
     function handleSearch(e){
 
         const search = e.target.value;
-        console.log('search', search)
 
-        let words = search.split(" ");
-        console.log('auxArtLists',  auxArtLists)
+            let words = search.split(" ");
 
-        const listFilter = auxArtLists.filter(obj => {
-
-            let validWord = words.some( word => obj.title.toLowerCase().includes(word.toLowerCase()) ||
+    
+            let listFilter = auxArtLists.filter(obj => {
+    
+                let validWord = words.some( word => obj.title.toLowerCase().includes(word.toLowerCase()) ||
                 obj.medium.toLowerCase().includes(word.toLowerCase()) ||
                 obj.artistDisplayName.toLowerCase().includes(word.toLowerCase()) 
-            )
-
-            return validWord;
-        })
-
-        if(listFilter.length > 0){
-            console.log('a', listFilter)
-        }
+                )
+                
+                return validWord;
+            })
+            
+            console.log('listFilter', listFilter)
+            if(listFilter.length > 0 && words[0] !== ""){
+                setAuxArtLists(listFilter)
+                listFilter = []
+            } else {
+                setAuxArtLists(artLists)
+                listFilter = []
+            }
+        
 
 
     }
@@ -48,13 +53,8 @@ export function CollectionArtComponent() {
 
         let list = await getObjectById(id);
 
-            // if (list.primaryImage !== "") {
                 setArtLists((item) => [...item, list])
                 setAuxArtLists((item) => [...item, list])  
-            // }
-    
-
-
 
     }
 
@@ -76,22 +76,21 @@ export function CollectionArtComponent() {
         ListCollection()
     }, [minCount])
 
-    // useEffect(() => {
+    useEffect(() => {
 
-    //     const scrollObserver = new IntersectionObserver((entry) => {
-    //         if (entry.some(entries => entries.isIntersecting)) {
-    //             setMinCount(state => state + 20)
-    //             setMaxCount(state => state + 20)
-    //             console.log("min", minCount);
-    //             console.log("maxCount", maxCount);
-    //         }
-    //     })
+        const scrollObserver = new IntersectionObserver((entry) => {
+            if (entry.some(entries => entries.isIntersecting)) {
+                setMinCount(state => state + 20)
+                setMaxCount(state => state + 20)
 
-    //     scrollObserver.observe(document.querySelector('#sentinel'));
+            }
+        })
 
-    //     return () => scrollObserver.disconnect();
+        scrollObserver.observe(document.querySelector('#sentinel'));
 
-    // }, [])
+        return () => scrollObserver.disconnect();
+
+    }, [])
 
     return (
         <article id="collection-article-container">

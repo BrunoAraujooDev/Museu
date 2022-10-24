@@ -1,7 +1,8 @@
 #id-footer {
-    width: 100vw;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 3rem 0;
+    text-align: center;
+    padding: 3rem 2rem;
 }

@@ -26,7 +26,7 @@ export function TemaProvider({ children }) {
 
             case "claro":
                 setTema({
-                    corFundoTema: "#f8f9fa",
+                    corFundoTema: "#f3e9d2",
                     corTema: "#ced4da",
                     corTexto: "#000",
                     corBotao: "#fff"
