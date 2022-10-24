@@ -28,8 +28,8 @@ export function TemaProvider({ children }) {
                 setTema({
                     corFundoTema: "#f3e9d2",
                     corTema: "#ced4da",
-                    corTexto: "#000",
-                    corBotao: "#fff"
+                    corTexto: "#0a0908",
+                    corBotao: "#6b705c"
                 });
                 break;
 

@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import { json, useParams } from "react-router-dom"
+import { json, Link, useParams } from "react-router-dom"
 import { TemaContext } from "../../Contexts/TemaContext";
 import { getObjectByIdDepartmentService } from "../../services/arts.service";
 import { getObjectById } from "../../utils/handleHttpRequest";
@@ -123,7 +123,11 @@ export function CollectionArtComponent() {
                                         <p>Medium: {art.medium !== "" ? art.medium : "No medium"}</p>
                                         <p>Artist: {art.artistDisplayName !== "" ? art.artistDisplayName : "Unknown"} </p>
                                     </div>
-                                    <button className="collection-button-card" style={{ backgroundColor: tema.corBotao, color: tema.corTexto }}>See more</button>
+                                    <button className="collection-button-card" style={{ backgroundColor: tema.corBotao }}>
+                                        <Link to={`/art/${art.objectID}`} style={{  color: tema.corTexto }}>
+                                            See more
+                                        </Link>
+                                    </button>
                                 </div>
 
 

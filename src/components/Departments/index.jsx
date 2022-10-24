@@ -11,7 +11,6 @@ export const Department = () => {
 
     const [departments, setDepartments] = useState([]);
     const [page, setPage] = useState({min: 0, max: 5});
-    console.log('departments', departments)
 
     useEffect(() => {
         if (departments.length === 0) {
