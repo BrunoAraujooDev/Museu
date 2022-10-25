@@ -104,7 +104,7 @@ export function CollectionArtComponent() {
                 <h1 style={{ color: tema.corTexto }}>{auxArtLists[0]?.department}</h1>
 
                 <section className="dept-input-section">
-                    <input type="text" placeholder="Search a department" className="dept-input-search"
+                    <input type="text" placeholder="Search an art" className="dept-input-search"
                         style={{ color: tema.corTexto, backgroundColor: tema.corFundoTema }}
                         onChange={(e) => handleSearch(e)}
                     />

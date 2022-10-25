@@ -35,6 +35,7 @@ export function ArtDetails() {
                     details.length > 0 &&
 
                     details.map((item, idx) => {
+                        
                         return (
                             <div key={idx} className="art-div-details" style={{
                                 borderColor: tema.corBotao, borderStyle: "solid",
