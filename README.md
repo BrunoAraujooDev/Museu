@@ -12,3 +12,7 @@ Com a pasta do projeto selecionada no terminal basta executar o seguintes comand
 
 * npm install
 * npm run dev
+
+## Site
+
+* https://museu-ny.netlify.app/
